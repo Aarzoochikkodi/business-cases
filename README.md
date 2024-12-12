@@ -296,30 +296,30 @@ Vertex\tDistance from Source
 
 ---
 ### Water and Waste Management Optimization
--To solve the Water and Waste Management Optimization problem using the Floyd-Warshall algorithm, we can model it as a graph problem where:
+- To solve the Water and Waste Management Optimization problem using the Floyd-Warshall algorithm, we can model it as a graph problem where:
 
--Nodes represent various locations (such as water treatment plants, waste disposal units, or city zones).
--Edges represent the transportation routes or connections between these locations (such as water pipelines, roads for waste collection, or infrastructure links).
--Edge weights represent the cost or time associated with transporting water or waste between two locations.
--The Floyd-Warshall algorithm can be used to compute the shortest path between all pairs of nodes in the graph. This will help optimize the routes for water distribution or -waste management by minimizing costs, time, or other resources. It can also be used for detecting the most efficient network structure for a city or area.
+- Nodes represent various locations (such as water treatment plants, waste disposal units, or city zones).
+- Edges represent the transportation routes or connections between these locations (such as water pipelines, roads for waste collection, or infrastructure links).
+- Edge weights represent the cost or time associated with transporting water or waste between two locations.
+- The Floyd-Warshall algorithm can be used to compute the shortest path between all pairs of nodes in the graph. This will help optimize the routes for water distribution or -waste management by minimizing costs, time, or other resources. It can also be used for detecting the most efficient network structure for a city or area.
 
 ## Problem Breakdown
 ## Graph Representation:
 
--Nodes: Locations involved in the water and waste management system (e.g., water supply sources, treatment plants, disposal points).
--Edges: Pipelines, roads, or other routes connecting the nodes, with weights representing time, distance, or cost.
--Optimization Objective:
+- Nodes: Locations involved in the water and waste management system (e.g., water supply sources, treatment plants, disposal points).
+- Edges: Pipelines, roads, or other routes connecting the nodes, with weights representing time, distance, or cost.
+- Optimization Objective:
 
--Minimize transportation costs for water delivery and waste collection.
--Ensure all locations are connected optimally.
--Find the most efficient paths between any two points in the network.
+- Minimize transportation costs for water delivery and waste collection.
+- Ensure all locations are connected optimally.
+- Find the most efficient paths between any two points in the network.
 ### Approach using Floyd-Warshall
--Graph Initialization: Represent the system as a matrix where each element dist[i][j] contains the cost (or time) of travel between node i and node j. If no direct -- -connection exists, this value is set to a high value (representing infinity).
+- Graph Initialization: Represent the system as a matrix where each element dist[i][j] contains the cost (or time) of travel between node i and node j. If no direct -- -connection exists, this value is set to a high value (representing infinity).
 
--Apply Floyd-Warshall: Use the algorithm to compute the shortest path between all pairs of nodes.
+- Apply Floyd-Warshall: Use the algorithm to compute the shortest path between all pairs of nodes.
 
--Result: The resulting distance matrix will provide the optimized routes and costs for both water and waste management across the system.
--- code
+- Result: The resulting distance matrix will provide the optimized routes and costs for both water and waste management across the system.
+```cpp
 #include <iostream>
 #include <vector>
 #define INF 99999999  // A large number representing infinity
@@ -369,6 +369,7 @@ int main() {
 
     return 0;
 }
+```
 
 - Enter number of vertices (locations) and edges (routes): 4 5
 - Enter the edges (source destination cost):
