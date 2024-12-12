@@ -320,46 +320,33 @@ Vertex\tDistance from Source
 
 -Result: The resulting distance matrix will provide the optimized routes and costs for both water and waste management across the system.
 -- code
-//#include <iostream>
+#include <iostream>
 #include <vector>
+#define INF 99999999  // A large number representing infinity
+
 using namespace std;
 
-// Define INF as 999 representing infinity (no path)
-#define INF 999
+void floydWarshall(vector<vector<int>>& graph, int V) {
+    // distance matrix to store the shortest path
+    vector<vector<int>> dist = graph;
 
-void floydWarshall(int vertices, vector<vector<int>>& graph) {
-    // distance matrix to store the shortest path lengths
-    vector<vector<int>> dist(vertices, vector<int>(vertices, INF));
-
-    // Initialize the distance matrix with the given graph
-    for (int i = 0; i < vertices; i++) {
-        for (int j = 0; j < vertices; j++) {
-            if (graph[i][j] != -1) {
-                dist[i][j] = graph[i][j]; // -1 indicates no direct path
-            }
-            if (i == j) {
-                dist[i][j] = 0; // distance to self is 0
-            }
-        }
-    }
-
-    // Floyd-Warshall algorithm: dynamic programming approach
-    for (int k = 0; k < vertices; k++) {
-        for (int i = 0; i < vertices; i++) {
-            for (int j = 0; j < vertices; j++) {
-                if (dist[i][k] != INF && dist[k][j] != INF && dist[i][j] > dist[i][k] + dist[k][j]) {
-                    dist[i][j] = dist[i][k] + dist[k][j]; // Relaxation step
+    // Apply Floyd-Warshall algorithm
+    for (int k = 0; k < V; k++) {
+        for (int i = 0; i < V; i++) {
+            for (int j = 0; j < V; j++) {
+                if (dist[i][k] + dist[k][j] < dist[i][j]) {
+                    dist[i][j] = dist[i][k] + dist[k][j];
                 }
             }
         }
     }
 
-    // Print the result (shortest distances between every pair of vertices)
-    cout << "Shortest distances between every pair of vertices:" << endl;
-    for (int i = 0; i < vertices; i++) {
-        for (int j = 0; j < vertices; j++) {
+    // Print the shortest distance matrix
+    cout << "Shortest distance matrix:" << endl;
+    for (int i = 0; i < V; i++) {
+        for (int j = 0; j < V; j++) {
             if (dist[i][j] == INF) {
-                cout << "INF "; // Represents no path
+                cout << "INF ";
             } else {
                 cout << dist[i][j] << " ";
             }
@@ -369,24 +356,20 @@ void floydWarshall(int vertices, vector<vector<int>>& graph) {
 }
 
 int main() {
-    int vertices, edges;
+    int V = 4; // Number of vertices
+    // Initialize the graph with INF for no direct edge and 0 for diagonal elements
+    vector<vector<int>> graph = {
+        {0, 3, INF, INF},
+        {2, 0, INF, INF},
+        {INF, 7, 0, 1},
+        {6, INF, INF, 0}
+    };
 
-    cout << "Enter number of vertices (locations) and edges (routes): ";
-    cin >> vertices >> edges;
-
-    vector<vector<int>> graph(vertices, vector<int>(vertices, -1)); // Initialize with -1 (no path)
-
-    cout << "Enter the edges (source destination cost):\n";
-    for (int i = 0; i < edges; i++) {
-        int src, dest, cost;
-        cin >> src >> dest >> cost;
-        graph[src][dest] = cost; // Set the cost of travel between locations
-    }
-
-    floydWarshall(vertices, graph);
+    floydWarshall(graph, V);
 
     return 0;
 }
+
 - Enter number of vertices (locations) and edges (routes): 4 5
 - Enter the edges (source destination cost):
 - 0 1 5
