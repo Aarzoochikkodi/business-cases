@@ -95,7 +95,7 @@ int main() {
 
     dijkstra(vertices, graph, source);
     return 0;
-} ```
+} 
 
 
 ## Example Input/Output
