@@ -386,18 +386,18 @@ int main() {
 
     return 0;
 }
-Enter number of vertices (locations) and edges (routes): 4 5
-Enter the edges (source destination cost):
-0 1 5
-0 2 10
-1 2 3
-1 3 1
-2 3 2
-Shortest distances between every pair of vertices:
-0 5 8 6 
-999 0 3 1 
-999 999 0 2 
-999 999 999 0
+- Enter number of vertices (locations) and edges (routes): 4 5
+- Enter the edges (source destination cost):
+- 0 1 5
+- 0 2 10
+- 1 2 3
+- 1 3 1
+- 2 3 2
+## Shortest distances between every pair of vertices:
+- 0 5 8 6 
+- 999 0 3 1 
+- 999 999 0 2 
+- 999 999 999 0
 
 
 ## Example Problem: Water Distribution and Waste Collection Network
