@@ -1,7 +1,6 @@
-
 # Optimal Road Network Design
 
-This project demonstrates an approach to solve **Optimal Road Network Design** using Dijkstra's algorithm in C++. The algorithm is used to find the shortest path between nodes in a graph, ensuring efficient road network design with minimized travel time and costs.
+This project demonstrates an approach to solve *Optimal Road Network Design* using Dijkstra's algorithm in C++. The algorithm is used to find the shortest path between nodes in a graph, ensuring efficient road network design with minimized travel time and costs.
 
 ## Problem Statement
 Designing an optimal road network involves:
@@ -18,20 +17,20 @@ Dijkstra's algorithm is ideal for solving this as it:
 ## Solution Approach
 ### Graph Representation
 The road network is represented as a directed weighted graph where:
-- **Nodes** represent intersections or key points.
-- **Edges** represent roads between intersections with weights as travel time or cost.
+- *Nodes* represent intersections or key points.
+- *Edges* represent roads between intersections with weights as travel time or cost.
 
 ### Steps
-1. **Input the Graph**: Define the number of intersections and roads with weights (costs).
-2. **Initialize Distances**: Set the source node distance to `0` and all others to `infinity`.
-3. **Priority Queue**: Use a min-heap to extract the node with the smallest distance.
-4. **Relaxation**: Update distances of adjacent nodes if a shorter path is found.
-5. **Output**: Display the shortest path from the source to all nodes or report unreachable nodes.
+1. *Input the Graph*: Define the number of intersections and roads with weights (costs).
+2. *Initialize Distances*: Set the source node distance to 0 and all others to infinity.
+3. *Priority Queue*: Use a min-heap to extract the node with the smallest distance.
+4. *Relaxation*: Update distances of adjacent nodes if a shorter path is found.
+5. *Output*: Display the shortest path from the source to all nodes or report unreachable nodes.
 
 ## Implementation in C++
 Below is the Dijkstra's algorithm implementation for road network design:
 
-```cpp
+cpp
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -97,11 +96,11 @@ int main() {
     dijkstra(vertices, graph, source);
     return 0;
 }
-```
+
 
 ## Example Input/Output
 ### Input
-```
+
 Enter number of vertices and edges: 6 9
 Enter edges (source destination weight):
 0 1 4
@@ -114,10 +113,10 @@ Enter edges (source destination weight):
 3 5 6
 4 5 3
 Enter the source vertex: 0
-```
+
 
 ### Output
-```
+
 Vertex\tDistance from Source
 0\t0
 1\t4
@@ -125,12 +124,12 @@ Vertex\tDistance from Source
 3\t9
 4\t11
 5\t14
-```
+
 
 ## Features
-- **Dynamic Adjustments**: Efficiently handles changes in road conditions by recalculating shortest paths.
-- **Scalable**: Works well for large networks with numerous intersections and roads.
-- **Efficient**: Uses a priority queue for fast updates.
+- *Dynamic Adjustments*: Efficiently handles changes in road conditions by recalculating shortest paths.
+- *Scalable*: Works well for large networks with numerous intersections and roads.
+- *Efficient*: Uses a priority queue for fast updates.
 
 
    
@@ -156,7 +155,7 @@ Vertex\tDistance from Source
 
 # Smart Public Transportation Scheduling
 
-This project demonstrates an approach to solve **Smart Public Transportation Scheduling** using the Bellman-Ford algorithm in C++. The algorithm ensures optimized pathfinding, cost minimization, and better scheduling in a public transportation network.
+This project demonstrates an approach to solve *Smart Public Transportation Scheduling* using the Bellman-Ford algorithm in C++. The algorithm ensures optimized pathfinding, cost minimization, and better scheduling in a public transportation network.
 
 ## Problem Statement
 Efficient scheduling of public transportation involves identifying the shortest and safest routes between key locations in a city. This requires:
@@ -173,20 +172,20 @@ The Bellman-Ford algorithm is ideal for solving this as it:
 ## Solution Approach
 ### Graph Representation
 The transportation network is represented as a directed weighted graph where:
-- **Nodes** represent stops or stations.
-- **Edges** represent routes between stops with weights as time or cost.
+- *Nodes* represent stops or stations.
+- *Edges* represent routes between stops with weights as time or cost.
 
 ### Steps
-1. **Input the Graph**: Define the number of stops and routes with weights (costs).
-2. **Initialize Distances**: Set the source node distance to `0` and all others to `infinity`.
-3. **Relaxation**: Iteratively update distances of all edges for `V-1` times (where `V` is the number of nodes).
-4. **Negative Cycle Detection**: Check for further relaxation; if possible, a negative cycle exists.
-5. **Output**: Display the shortest path from the source to all stops or report unreachable stops.
+1. *Input the Graph*: Define the number of stops and routes with weights (costs).
+2. *Initialize Distances*: Set the source node distance to 0 and all others to infinity.
+3. *Relaxation*: Iteratively update distances of all edges for V-1 times (where V is the number of nodes).
+4. *Negative Cycle Detection*: Check for further relaxation; if possible, a negative cycle exists.
+5. *Output*: Display the shortest path from the source to all stops or report unreachable stops.
 
 ## Implementation in C++
 Below is the Bellman-Ford implementation for scheduling:
 
-```cpp
+cpp
 #include <iostream>
 #include <vector>
 #include <climits>
@@ -245,11 +244,11 @@ int main() {
     bellmanFord(vertices, edges, graph, source);
     return 0;
 }
-```
+
 
 ## Example Input/Output
 ### Input
-```
+
 Enter number of vertices and edges: 5 8
 Enter edges (source destination weight):
 0 1 6
@@ -261,22 +260,22 @@ Enter edges (source destination weight):
 2 4 9
 3 1 -2
 Enter the source vertex: 0
-```
+
 
 ### Output
-```
+
 Vertex\tDistance from Source
 0\t0
 1\t6
 2\t7
 3\t4
 4\t2
-```
+
 
 ## Features
-- **Dynamic Updates**: Handle changing routes by re-running the algorithm.
-- **Negative Weight Handling**: Accounts for delays or penalties in scheduling.
-- **Scalability**: Works for large transportation networks with numerous stops and routes.
+- *Dynamic Updates*: Handle changing routes by re-running the algorithm.
+- *Negative Weight Handling*: Accounts for delays or penalties in scheduling.
+- *Scalability*: Works for large transportation networks with numerous stops and routes.
 
 
 
@@ -286,7 +285,7 @@ Vertex\tDistance from Source
 - Dynamic route adjustments during disruptions.
 
 ## Limitations
-- Inefficient for dense graphs due to `O(V * E)` complexity.
+- Inefficient for dense graphs due to O(V * E) complexity.
 - Does not handle undirected graphs with negative cycles.
 
 ## Future Enhancements
@@ -319,7 +318,7 @@ Vertex\tDistance from Source
 - Apply Floyd-Warshall: Use the algorithm to compute the shortest path between all pairs of nodes.
 
 - Result: The resulting distance matrix will provide the optimized routes and costs for both water and waste management across the system.
-```cpp
+cpp
 #include <iostream>
 #include <vector>
 #define INF 99999999  // A large number representing infinity
@@ -369,7 +368,7 @@ int main() {
 
     return 0;
 }
-```
+
 
 - Enter number of vertices (locations) and edges (routes): 4 5
 - Enter the edges (source destination cost):
