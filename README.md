@@ -320,7 +320,6 @@ Vertex\tDistance from Source
 -Result: The resulting distance matrix will provide the optimized routes and costs for both water and waste management across the system.
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
 // Define INF as 999 representing infinity (no path)
