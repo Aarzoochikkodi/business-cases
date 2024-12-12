@@ -131,21 +131,8 @@ Vertex\tDistance from Source
 - **Scalable**: Works well for large networks with numerous intersections and roads.
 - **Efficient**: Uses a priority queue for fast updates.
 
-## How to Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/optimal-road-network.git
-   cd optimal-road-network
-   ```
-2. Compile the code:
-   ```bash
-   g++ -o dijkstra dijkstra.cpp
-   ```
-3. Run the program:
-   ```bash
-   ./dijkstra
-   ```
-4. Follow the prompts to input graph details and the source node.
+
+   
 
 ## Use Cases
 - Urban road network optimization.
@@ -162,9 +149,6 @@ Vertex\tDistance from Source
 - Support multi-objective optimization (e.g., time and fuel cost).
 
 ---
-Contributions are welcome! Feel free to fork this repository and submit pull requests.
-
-
 
 
 
@@ -293,21 +277,7 @@ Vertex\tDistance from Source
 - **Negative Weight Handling**: Accounts for delays or penalties in scheduling.
 - **Scalability**: Works for large transportation networks with numerous stops and routes.
 
-## How to Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/smart-public-transportation.git
-   cd smart-public-transportation
-   ```
-2. Compile the code:
-   ```bash
-   g++ -o bellman_ford bellman_ford.cpp
-   ```
-3. Run the program:
-   ```bash
-   ./bellman_ford
-   ```
-4. Follow the prompts to input graph details and the source node.
+
 
 ## Use Cases
 - Public transport scheduling to reduce travel time.
@@ -348,6 +318,74 @@ Vertex\tDistance from Source
 -Apply Floyd-Warshall: Use the algorithm to compute the shortest path between all pairs of nodes.
 
 -Result: The resulting distance matrix will provide the optimized routes and costs for both water and waste management across the system.
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+// Define INF as 999 representing infinity (no path)
+#define INF 999
+
+void floydWarshall(int vertices, vector<vector<int>>& graph) {
+    // distance matrix to store the shortest path lengths
+    vector<vector<int>> dist(vertices, vector<int>(vertices, INF));
+
+    // Initialize the distance matrix with the given graph
+    for (int i = 0; i < vertices; i++) {
+        for (int j = 0; j < vertices; j++) {
+            if (graph[i][j] != -1) {
+                dist[i][j] = graph[i][j]; // -1 indicates no direct path
+            }
+            if (i == j) {
+                dist[i][j] = 0; // distance to self is 0
+            }
+        }
+    }
+
+    // Floyd-Warshall algorithm: dynamic programming approach
+    for (int k = 0; k < vertices; k++) {
+        for (int i = 0; i < vertices; i++) {
+            for (int j = 0; j < vertices; j++) {
+                if (dist[i][k] != INF && dist[k][j] != INF && dist[i][j] > dist[i][k] + dist[k][j]) {
+                    dist[i][j] = dist[i][k] + dist[k][j]; // Relaxation step
+                }
+            }
+        }
+    }
+
+    // Print the result (shortest distances between every pair of vertices)
+    cout << "Shortest distances between every pair of vertices:" << endl;
+    for (int i = 0; i < vertices; i++) {
+        for (int j = 0; j < vertices; j++) {
+            if (dist[i][j] == INF) {
+                cout << "INF "; // Represents no path
+            } else {
+                cout << dist[i][j] << " ";
+            }
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    int vertices, edges;
+
+    cout << "Enter number of vertices (locations) and edges (routes): ";
+    cin >> vertices >> edges;
+
+    vector<vector<int>> graph(vertices, vector<int>(vertices, -1)); // Initialize with -1 (no path)
+
+    cout << "Enter the edges (source destination cost):\n";
+    for (int i = 0; i < edges; i++) {
+        int src, dest, cost;
+        cin >> src >> dest >> cost;
+        graph[src][dest] = cost; // Set the cost of travel between locations
+    }
+
+    floydWarshall(vertices, graph);
+
+    return 0;
+}
 
 ## Example Problem: Water Distribution and Waste Collection Network
 - Node  s: Locations involved in the system (water sources, treatment plants, collection points, etc.).
