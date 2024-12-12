@@ -101,29 +101,29 @@ int main() {
 ## Example Input/Output
 ### Input
 
-Enter number of vertices and edges: 6 9
-Enter edges (source destination weight):
-0 1 4
-0 2 4
-1 2 2
-1 3 5
-2 3 8
-2 4 10
-3 4 2
-3 5 6
-4 5 3
-Enter the source vertex: 0
+- Enter number of vertices and edges: 6 9
+- Enter edges (source destination weight):
+- 0 1 4
+- 0 2 4
+- 1 2 2
+- 1 3 5
+- 2 3 8
+- 2 4 10
+- 3 4 2
+- 3 5 6
+- 4 5 3
+- Enter the source vertex: 0
 
 
 ### Output
 
-Vertex\tDistance from Source
-0\t0
-1\t4
-2\t4
-3\t9
-4\t11
-5\t14
+- Vertex\tDistance from Source
+- 0\t0
+- 1\t4
+- 2\t4
+- 3\t9
+- 4\t11
+- 5\t14
 
 
 ## Features
@@ -185,8 +185,8 @@ The transportation network is represented as a directed weighted graph where:
 ## Implementation in C++
 Below is the Bellman-Ford implementation for scheduling:
 
-cpp
-#include <iostream>
+
+```cpp#include <iostream>
 #include <vector>
 #include <climits>
 using namespace std;
@@ -244,32 +244,32 @@ int main() {
     bellmanFord(vertices, edges, graph, source);
     return 0;
 }
-
+```
 
 ## Example Input/Output
 ### Input
 
-Enter number of vertices and edges: 5 8
-Enter edges (source destination weight):
-0 1 6
-0 2 7
-1 2 8
-1 3 5
-1 4 -4
-2 3 -3
-2 4 9
-3 1 -2
-Enter the source vertex: 0
+- Enter number of vertices and edges: 5 8
+- Enter edges (source destination weight):
+- 0 1 6
+- 0 2 7
+- 1 2 8
+- 1 3 5
+- 1 4 -4
+- 2 3 -3
+- 2 4 9
+- 3 1 -2
+- Enter the source vertex: 0
 
 
 ### Output
 
-Vertex\tDistance from Source
-0\t0
-1\t6
-2\t7
-3\t4
-4\t2
+- Vertex\tDistance from Source
+- 0\t0
+- 1\t6
+- 2\t7
+- 3\t4
+- 4\t2
 
 
 ## Features
@@ -293,7 +293,7 @@ Vertex\tDistance from Source
 - Integrate real-time data updates using APIs.
 - Visualize the transportation network and paths.
 
----
+
 ### Water and Waste Management Optimization
 - To solve the Water and Waste Management Optimization problem using the Floyd-Warshall algorithm, we can model it as a graph problem where:
 
@@ -318,8 +318,8 @@ Vertex\tDistance from Source
 - Apply Floyd-Warshall: Use the algorithm to compute the shortest path between all pairs of nodes.
 
 - Result: The resulting distance matrix will provide the optimized routes and costs for both water and waste management across the system.
-cpp
-#include <iostream>
+  
+```cpp #include <iostream>
 #include <vector>
 #define INF 99999999  // A large number representing infinity
 
@@ -368,6 +368,7 @@ int main() {
 
     return 0;
 }
+```
 
 
 - Enter number of vertices (locations) and edges (routes): 4 5
