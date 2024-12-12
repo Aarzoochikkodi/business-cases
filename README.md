@@ -91,7 +91,8 @@ int main() {
     return 0;
 }
 
-# Smart Public Transportation Scheduling
+
+## 2.Smart Public Transportation Scheduling
 
 This project demonstrates an approach to solve **Smart Public Transportation Scheduling** using the Bellman-Ford algorithm in C++. The algorithm ensures optimized pathfinding, cost minimization, and better scheduling in a public transportation network.
 
