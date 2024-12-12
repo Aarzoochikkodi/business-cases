@@ -30,7 +30,7 @@ The road network is represented as a directed weighted graph where:
 ## Implementation in C++
 Below is the Dijkstra's algorithm implementation for road network design:
 
-cpp
+```cpp
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -95,7 +95,7 @@ int main() {
 
     dijkstra(vertices, graph, source);
     return 0;
-}
+} ```
 
 
 ## Example Input/Output
@@ -386,4 +386,4 @@ int main() {
 
 ## Example Problem: Water Distribution and Waste Collection Network
 - Node  s: Locations involved in the system (water sources, treatment plants, collection points, etc.).
-Edges: Routes for transporting water or waste (pipelines, roads, etc.).
+- Edges: Routes for transporting water or waste (pipelines, roads, etc.).
