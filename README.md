@@ -295,7 +295,7 @@ Vertex\tDistance from Source
 - Visualize the transportation network and paths.
 
 ---
-### 3.Water and Waste Management Optimization
+# 3.Water and Waste Management Optimization
 -To solve the Water and Waste Management Optimization problem using the Floyd-Warshall algorithm, we can model it as a graph problem where:
 
 -Nodes represent various locations (such as water treatment plants, waste disposal units, or city zones).
