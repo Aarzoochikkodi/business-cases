@@ -30,8 +30,8 @@ The road network is represented as a directed weighted graph where:
 ## Implementation in C++
 Below is the Dijkstra's algorithm implementation for road network design:
 
-```cpp
-#include <iostream>
+
+```cpp #include <iostream>
 #include <vector>
 #include <queue>
 #include <utility>
