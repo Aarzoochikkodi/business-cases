@@ -1,5 +1,5 @@
 # Business Cases
-# 1.Optimal Road Network Design
+# Optimal Road Network Design
 
 This project demonstrates an approach to solve **Optimal Road Network Design** using Dijkstra's algorithm in C++. The algorithm is used to find the shortest path between nodes in a graph, ensuring efficient road network design with minimized travel time and costs.
 
@@ -154,7 +154,7 @@ Vertex\tDistance from Source
 
 
 
-# 2.Smart Public Transportation Scheduling
+# Smart Public Transportation Scheduling
 
 This project demonstrates an approach to solve **Smart Public Transportation Scheduling** using the Bellman-Ford algorithm in C++. The algorithm ensures optimized pathfinding, cost minimization, and better scheduling in a public transportation network.
 
@@ -295,7 +295,7 @@ Vertex\tDistance from Source
 - Visualize the transportation network and paths.
 
 ---
-# 3.Water and Waste Management Optimization
+### Water and Waste Management Optimization
 -To solve the Water and Waste Management Optimization problem using the Floyd-Warshall algorithm, we can model it as a graph problem where:
 
 -Nodes represent various locations (such as water treatment plants, waste disposal units, or city zones).
