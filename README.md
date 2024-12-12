@@ -25,7 +25,6 @@ The goal of this business case is to optimize the road network for efficient tra
 
 #### C++ Code for Optimal Road Network Design:
 
-[Click here to view the C++ code for Optimal Road Network Design](optimal_road_network_code.cpp)
 
 ```cpp
 #include <iostream>
