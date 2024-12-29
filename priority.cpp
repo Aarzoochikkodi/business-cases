@@ -1,60 +1,37 @@
-import heapq
+#include <iostream>
+#include <queue>
+using namespace std;
 
-class PriorityQueue:
-    def __init__(self):
-        # Initialize an empty list to represent the priority queue
-        self.queue = []
-        self.counter = 0  # A counter to maintain order when priorities are equal
+int main() {
+    priority_queue<int> maxHeap;  // By default, max-heap in C++
 
-    def push(self, priority, task):
-        """
-        Adds a task to the priority queue with a given priority.
-        The heapq library uses a min-heap, so we store the priority as negative to simulate a max-heap.
-        """
-        # The task is added with priority (negative for max-heap) and the counter for tie-breaking.
-        heapq.heappush(self.queue, (-priority, self.counter, task))
-        self.counter += 1
+    maxHeap.push(10);
+    maxHeap.push(30);
+    maxHeap.push(20);
+    maxHeap.push(5);
+    maxHeap.push(15);
 
-    def pop(self):
-        """
-        Removes and returns the task with the highest priority (the one with the smallest negative priority).
-        """
-        if self.queue:
-            # Pop the task with the highest priority
-            priority, counter, task = heapq.heappop(self.queue)
-            return task
-        else:
-            return None
+    cout << "Priority Queue (Max Heap): ";
+    while (!maxHeap.empty()) {
+        cout << maxHeap.top() << " ";
+        maxHeap.pop();
+    }
+    cout << endl;
 
-    def is_empty(self):
-        """
-        Returns True if the queue is empty, otherwise False.
-        """
-        return len(self.queue) == 0
+    priority_queue<int, vector<int>, greater<int>> minHeap; // Min-heap
 
-    def peek(self):
-        """
-        Returns the task with the highest priority without removing it from the queue.
-        """
-        if self.queue:
-            return self.queue[0][2]  # Return the task with the highest priority
-        else:
-            return None
+    minHeap.push(10);
+    minHeap.push(30);
+    minHeap.push(20);
+    minHeap.push(5);
+    minHeap.push(15);
 
+    cout << "Priority Queue (Min Heap): ";
+    while (!minHeap.empty()) {
+        cout << minHeap.top() << " ";
+        minHeap.pop();
+    }
+    cout << endl;
 
-# Example usage of the PriorityQueue class
-def schedule_buses():
-    pq = PriorityQueue()
-
-    # Add bus routes with corresponding priorities (higher number = higher priority)
-    pq.push(10, "Route A")  # High priority
-    pq.push(5, "Route B")   # Medium priority
-    pq.push(8, "Route C")   # Lower priority
-
-    # Process buses based on priority
-    while not pq.is_empty():
-        bus_route = pq.pop()
-        print(f"Dispatching bus: {bus_route}")
-
-# Running the bus scheduling example
-schedule_buses()
+    return 0;
+}
