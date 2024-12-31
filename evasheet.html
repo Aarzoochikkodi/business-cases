@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computational Thinking Ideas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2rem;
+            color: #343a40;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #343a40;
+            color: #ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e9ecef;
+        }
+        tr td:first-child {
+            font-weight: bold;
+            color: #495057;
+        }
+        @media screen and (max-width: 768px) {
+            table {
+                width: 100%;
+                font-size: 0.9rem;
+            }
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Computational Thinking Ideas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>SI. No.</th>
+                <th>Idea</th>
+                <th>Description</th>
+                <th>Can you use this in your project?</th>
+                <th>How and where?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Decomposition</td>
+                <td>Divide the problem into smaller manageable parts</td>
+                <td>Yes</td>
+                <td>Decomposing the project into modules: road network optimization, public transport scheduling, and water/waste management</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Pattern Recognition</td>
+                <td>Identifying common recurring patterns</td>
+                <td>Yes</td>
+                <td>Recognizing patterns in traffic flow, transport demand, and water distribution to optimize algorithm designs</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Abstraction</td>
+                <td>Keep only the required data for the task</td>
+                <td>Yes</td>
+                <td>Using only necessary data like road distances, traffic patterns, or water usage for analysis and optimization</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Brute Force</td>
+                <td>The definitional way of solving the problem</td>
+                <td>Yes</td>
+                <td>Testing all possible paths in a small-scale road network to validate solutions</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Divide and Conquer</td>
+                <td>Divide the problem into smaller parts (preferably half) and then solve the problem</td>
+                <td>Yes</td>
+                <td>Splitting a road network into zones and solving each zone separately before combining results</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Decrease and Conquer</td>
+                <td>Decrease the input size by 1 or some constant k in each solution phase</td>
+                <td>Yes</td>
+                <td>Gradually reducing the size of road networks or transport schedules for iterative optimization</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Transform and Conquer</td>
+                <td>Change the problem representation to something else</td>
+                <td>Yes</td>
+                <td>Representing road networks as weighted graphs for Dijkstra’s and Floyd-Warshall algorithms</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Dynamic Programming</td>
+                <td>Smaller solutions contribute to larger</td>
+                <td>Yes</td>
+                <td>Using Floyd-Warshall to find all-pairs shortest paths for water/waste management optimization</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Greedy Technique</td>
+                <td>Select optimal choice in each iteration</td>
+                <td>Yes</td>
+                <td>Employing Dijkstra's algorithm for finding shortest paths in the road network</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Space and Time Tradeoff</td>
+                <td>If you optimize time, you lose space (example: Hashing)</td>
+                <td>Yes</td>
+                <td>Using adjacency matrices in Floyd-Warshall for faster computation at the cost of more memory</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Backtracking</td>
+                <td>Prune the not required state space tree element</td>
+                <td>Yes</td>
+                <td>Removing invalid paths while using Bellman-Ford for public transport scheduling</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Brave and Cautious Travel</td>
+                <td>Travel till the dead end or breadth-wise</td>
+                <td>Yes</td>
+                <td>Simulating traffic flow in road networks using breadth-first search techniques</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Pruning</td>
+                <td>Remove the not required part</td>
+                <td>Yes</td>
+                <td>Eliminating unnecessary paths or data points in Bellman-Ford for transport scheduling</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Lazy Propagation</td>
+                <td>Do not update unless need be</td>
+                <td>Yes</td>
+                <td>Updating road or water flow information only when changes occur</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Sliding Window</td>
+                <td>A smaller view of data set</td>
+                <td>Yes</td>
+                <td>Analyzing traffic data in smaller time intervals for better optimization</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Level Order Traversal</td>
+                <td>From each level, left to right</td>
+                <td>Yes</td>
+                <td>Traversing city layouts level-by-level for hierarchical transport scheduling</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Hierarchical Data and Trees</td>
+                <td>Organization of data</td>
+                <td>Yes</td>
+                <td>Structuring road and water networks hierarchically for efficient storage and processing</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Edge Relaxation</td>
+                <td>Select the minimum edge and make it part of solution set</td>
+                <td>Yes</td>
+                <td>Using edge relaxation in Bellman-Ford and Floyd-Warshall algorithms</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Balancing a Tree</td>
+                <td>Is the tree (data) skewed? Do we need to balance?</td>
+                <td>Yes</td>
+                <td>Ensuring balanced graph representations for efficient traversal</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Kleene Closure</td>
+                <td>Transitive property</td>
+                <td>Yes</td>
+                <td>Applying transitive closure in Floyd-Warshall to compute shortest paths</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Pre-Computing</td>
+                <td>Pre compute and keep some results</td>
+                <td>Yes</td>
+                <td>Precomputing shortest paths in road networks for reuse during queries</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Parental Dominance</td>
+                <td>Maintain a priority data</td>
+                <td>Yes</td>
+                <td>Maintaining a priority queue in Dijkstra’s algorithm for road optimization</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Prefix and Suffix</td>
+                <td>Generate prefix and suffix</td>
+                <td>Yes</td>
+                <td>Calculating cumulative travel times for transport scheduling</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
